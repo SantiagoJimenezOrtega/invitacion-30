@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Animación para el número 30 flotando */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Animación de la llama de la vela */
+@keyframes flicker {
+  0%, 100% {
+    transform: scaleY(1) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scaleY(0.95) translateY(-2px);
+    opacity: 0.8;
+  }
+}
+
+.flame {
+  animation: flicker 0.3s ease-in-out infinite;
+}
+
+/* Animación de explosión del número */
+@keyframes explode {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.explode {
+  animation: explode 0.6s ease-out forwards;
+}
+
+/* Animación de caída de confeti */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  animation: confetti-fall linear forwards;
+}
